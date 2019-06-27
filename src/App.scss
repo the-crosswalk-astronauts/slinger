@@ -7,7 +7,10 @@ border: 1px solid #000;
 @import './SassVars';
 @import './Styles/Sidebar';
 @import './Styles/UserHome';
+@import './Styles/Checklist';
+
 
 *{
   @include scrollbar
 }
+

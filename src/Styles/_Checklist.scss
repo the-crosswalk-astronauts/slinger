@@ -1,0 +1,14 @@
+.completedToDo {
+text-decoration: line-through;
+opacity: .5;
+display: flex;
+}
+
+.incompleteToDo {
+display: flex;
+}
+
+.incompleteToDo * {
+  margin: 10px;
+}
+
