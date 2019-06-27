@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import DealDisplay from './DealDisplay';
-import HomeLeftCol from './Sidebar';
+import Sidebar from './Sidebar';
 
 
 export default class UserHome extends Component {
@@ -11,7 +11,7 @@ export default class UserHome extends Component {
     return (
       <div>
 
-        <HomeLeftCol/>
+        <Sidebar/>
 
         <DealDisplay/>
 
