@@ -9,13 +9,9 @@ export default class UserHome extends Component {
     
 
     return (
-      <div>
-
+      <div className='UserHome'>
         <Sidebar/>
-
         <DealDisplay/>
-
-
       </div>
     )
   }

@@ -3,5 +3,11 @@ margin: 3%;
 padding:1%;
 border: 1px solid #000;
 }
+@import './reset.scss';
 @import './SassVars';
 @import './Styles/Sidebar';
+@import './Styles/UserHome';
+
+*{
+  @include scrollbar
+}
