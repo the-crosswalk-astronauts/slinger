@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import CreateDealInput from './CreateDealInput';
 
+// So there's a really bad thing in this component- Before pushing to production, initialize state as blank strings/numbers...for all 5,000 inputs. 
+
 
 export default class CreateDeal extends Component {
   constructor() {
     super()
     this.state = {
-
+      
     }
   }
 
