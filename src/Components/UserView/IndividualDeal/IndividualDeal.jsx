@@ -6,7 +6,7 @@ export default class Sidebar extends Component {
   render() {
 
     console.log(deals)
-// const contactsMap= 
+// const contactsMap= deals[0]
     return (
       <div>
         <h1>Deal</h1>
