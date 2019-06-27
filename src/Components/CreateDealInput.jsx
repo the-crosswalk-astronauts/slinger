@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 
 export default class CreateDealInput extends Component {
+  //there is no local state on this because state is updated on it's parent component (Create Deal)
+  
   render() {
     return (
       <div className="contactform">

@@ -16,7 +16,16 @@ export default class CreateDeal extends Component {
     })
   }
 
-// the idea of this component is to create a deal- the user inputs all of the "hotsheet" info so that they can see it in an at-a glance somewhere else in the app. 
+  submitHandler = (e) => {
+    e.preventDefault()
+
+
+  }
+
+  // the idea of this component is to create a deal- the user inputs all of the "hotsheet" info so that they can see it in an at-a glance somewhere else in the app. 
+
+
+
 
   render() {
     return (
@@ -26,10 +35,22 @@ export default class CreateDeal extends Component {
 
         <div className="dealWizard">
 
+          <div className="dealInfoHolder">
+
+            <h2>Property Address</h2>
+            <input type="text" placeholder="Property Address" required onChange={this.changeHandler} />
+
+            <h2>MLS number</h2>
+            <input type="number" placeholder="mls number" required onChange={this.changeHandler} />
+
+
+          </div>
+
           <CreateDealInput title="buyer" inputHandler={this.changeHandler} />
           <CreateDealInput title="lender" inputHandler={this.changeHandler} />
           <CreateDealInput title="title" inputHandler={this.changeHandler} />
           <CreateDealInput title="listingAgent" inputHandler={this.changeHandler} />
+
 
           <div className="dealInfoHolder">
 
@@ -51,17 +72,17 @@ export default class CreateDeal extends Component {
           <div className="dealInfoHolder">
 
             <h2>Purchase Price</h2>
-            <input type='number' required name='price' placeholder="250000"  onChange={this.changeHandler}/>
+            <input type='number' required name='price' placeholder="250000" onChange={this.changeHandler} />
 
             <h2>Commission</h2>
-            <input type='number' required name='commission' placeholder='commission'  onChange={this.changeHandler}/>
+            <input type='number' required name='commission' placeholder='commission' onChange={this.changeHandler} />
 
             <h2>Earnest Money</h2>
             <input type='number' required name='em' placeholder='Earnest Money' onChange={this.changeHandler} />
 
           </div>
 
-
+          <button onClick={this.submitHandler}>Create Deal</button>
         </div>
 
       </div>

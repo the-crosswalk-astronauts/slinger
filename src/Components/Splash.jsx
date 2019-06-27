@@ -1,14 +1,11 @@
 import React, {Component} from 'react'
 
 
-export default class HomeLeftCol extends Component {
+export default class DealDisplay extends Component {
   render() {
     return (
       <div>
-        <h1>Sidebar</h1>
-        
-
-
+        This is the home page BRUH
       </div>
     )
   }
