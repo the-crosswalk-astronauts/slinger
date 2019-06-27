@@ -63,8 +63,8 @@ module.exports = {
     },
     {
       id: ++id,
-      address: '512 N Claypool Ct VA Beach VA',
-      mls: 13288899,
+      address: '123 Fake Street',
+      mls: 6669,
       price: 250000,
       contacts: [
         {
@@ -88,7 +88,7 @@ module.exports = {
         },
         {
 
-          name: 'Alex Doss',
+          name: 'YEET',
           phone: 8012239999,
           email: 'alex_doss_42_@bob.com',
           type: "Buyer"
@@ -120,8 +120,8 @@ module.exports = {
     },
     {
       id: ++id,
-      address: '512 N Claypool Ct VA Beach VA',
-      mls: 13288899,
+      address: '648 S 500 W Provo UT',
+      mls: 13289,
       price: 250000,
       contacts: [
         {
@@ -145,7 +145,7 @@ module.exports = {
         },
         {
 
-          name: 'Alex Doss',
+          name: 'Andrew',
           phone: 8012239999,
           email: 'alex_doss_42_@bob.com',
           type: "Buyer"
@@ -175,6 +175,7 @@ module.exports = {
       ]
 
     },
+    
   ]
 
 }
