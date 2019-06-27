@@ -6,7 +6,7 @@ export default class HomeLeftCol extends Component {
     return (
       <div>
         <h1>Sidebar</h1>
-        
+        Hello andrew
 
 
       </div>
