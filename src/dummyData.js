@@ -1,7 +1,9 @@
 let id=0
 let toDoId=0
+//each object in the array represents a deal
+module.exports= {
 
-module.exports= [
+deals:[
   {
     id: ++id,
     address: '512 N Claypool Ct VA Beach VA', 
@@ -120,3 +122,5 @@ module.exports= [
     
   },
 ]
+
+}
