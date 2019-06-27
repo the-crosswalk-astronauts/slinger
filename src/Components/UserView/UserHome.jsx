@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import DealDisplay from './DealDisplay';
-import HomeLeftCol from './HomeLeftCol';
+import HomeLeftCol from './Sidebar';
 
 
 export default class UserHome extends Component {
