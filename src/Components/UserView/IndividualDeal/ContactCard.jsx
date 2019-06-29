@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
 
-export default class Sidebar extends Component {
+export default class ContactCard extends Component {
   render() {
     return (
-      <div>
+      <div className="contactCard">
         <h1>{this.props.name}</h1>
         <h2>{this.props.type}</h2>
         
