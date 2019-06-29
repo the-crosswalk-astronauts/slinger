@@ -1,0 +1,26 @@
+// These are all placeholder styling. 
+
+.contactsContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 66%;
+  margin: auto;
+  border: 1px solid #000;
+  background-color: red;
+  padding: 20px;
+}
+
+.propertyHeader {
+  font-size: 36px;
+}
+.propertyHeader h2 {
+  margin: 2%;
+}
+
+.completedToDo {
+  text-decoration: line-through;
+  color: lightgray;
+
+}

@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import QuickSell from './QuickSell'
 import Register from './Register'
 
-export default class DealDisplay extends Component {
+export default class Splash extends Component {
   render() {
     return (
       <div>
