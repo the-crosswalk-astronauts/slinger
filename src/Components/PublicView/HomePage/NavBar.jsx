@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 
-//the component that will house the register for a user. 
+//the component that will house the login bar for a user. 
 
 export default class NavBar extends Component {
   constructor() {
@@ -24,15 +24,21 @@ export default class NavBar extends Component {
       <div>
         
         <h2>Email</h2>
-        <input type="email" name='userEmail' required placeholder="Email"/>
+        <input type="email" name='userEmail' required placeholder="Email"  onChange={this.changeHandler}/>
 
 
         <h2>Password</h2>
-        <input type="password" name='userPass' required placeholder="password"/>
+        <input type="password" name='userPass' required placeholder="password" onChange={this.changeHandler}/>
 
 
 
-      <button onClick={()=>alert('Logged In!')}>Login</button>
+      <button onClick={()=>{
+        alert('Logged In!')
+        this.setState({
+          userEmail:'',
+          userPass:''
+        })
+    }}>Login</button>
 
       </div>
     )
