@@ -1,18 +1,20 @@
 import React, {Component} from 'react'
 import ContactCard from './ContactCard'
 import Checklist from './Checklist'
-import deals from '../../../dummyData'
+import dummyData from '../../../dummyData'
 export default class Sidebar extends Component {
   render() {
 
-    console.log(deals)
-// const contactsMap= deals[0]
+
+const contactsMap= dummyData.deals[0].contacts.map((el, i)=> {
+  return <ContactCard type={el.type} name={el.name} phone={el.phone}  email={el.email} key={i} />
+})
     return (
       <div>
-        <h1>Deal</h1>
+        <h1>Individual Deal</h1>
         
         <div>
-
+      {contactsMap}
 
           <Checklist /> 
         </div>
