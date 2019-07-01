@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import ContactCard from './ContactCard'
 import Checklist from './Checklist'
 import dummyData from '../../../dummyData'
+import {connect} from 'react-redux'
 
-
-export default class IndividualDeal extends Component {
+class IndividualDeal extends Component {
+ 
+ 
   render() {
 
 //Up here I need to grab the state from redux (maybe an "dealOnDisplay" property) and then  
@@ -41,3 +43,15 @@ export default class IndividualDeal extends Component {
     )
   }
 }
+
+const mapStateToProps=(state)=> {
+  return {
+    deal: state.dealOnDisplay
+  }
+}
+
+const mapDispatchToProps= {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IndividualDeal)

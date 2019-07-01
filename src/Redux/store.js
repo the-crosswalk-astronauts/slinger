@@ -6,7 +6,6 @@ import dummyData from '../dummyData'
 
 const initialState= {
   deals: dummyData.deals,
-
   dealOnDisplay:''
 }
 
@@ -26,7 +25,9 @@ function reducer(state=initialState, action) {
 
   switch(type){
     case UPDATE_DEAL_DISPLAY:
-      return {payload, ...state}
+      console.log(payload, "updated")
+      return {dealOnDisplay:payload,
+         ...state}
     
     default: 
     return state;
