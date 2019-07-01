@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import ContactCard from './ContactCard'
 import Checklist from './Checklist'
 import dummyData from '../../../dummyData'
-export default class Sidebar extends Component {
+
+
+export default class IndividualDeal extends Component {
   render() {
+
+//Up here I need to grab the state from redux (maybe an "dealOnDisplay" property) and then  
 
 
     const contactsMap = dummyData.deals[0].contacts.map((el, i) => {

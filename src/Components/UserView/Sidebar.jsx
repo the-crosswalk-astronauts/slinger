@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { deals } from '../../dummyData'
+import { updateDealDisplay } from '../../Redux/store'
+import {connect} from 'react-redux'
+
+class Sidebar extends Component {
 
 
-export default class Sidebar extends Component {
+
   render() {
     return (
       <div className='Sidebar'>
@@ -11,7 +15,7 @@ export default class Sidebar extends Component {
         </div>
         <div className="sidebar-cards-hold">
           {deals.map(element => (
-            <div key={element.id} className='sidebar-card'>
+            <div key={element.id} className='sidebar-card' onClick={()=>this.props.updateDealDisplay(element.id)}>
               <p>{element.buyer}</p>
               <p>{element.address}</p>
             </div>
@@ -27,3 +31,15 @@ export default class Sidebar extends Component {
     )
   }
 }
+
+const mapStateToProps=(state)=> {
+  return {
+
+  }
+}
+
+const mapDispatchToProps= {
+updateDealDisplay
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
