@@ -5,7 +5,7 @@ import dummyData from '../../../dummyData'
 import {connect} from 'react-redux'
 
 class IndividualDeal extends Component {
- 
+
  
   render() {
 
@@ -46,7 +46,7 @@ class IndividualDeal extends Component {
 
 const mapStateToProps=(state)=> {
   return {
-    deal: state.dealOnDisplay
+    deal: state.dealOnDisplay, 
   }
 }
 

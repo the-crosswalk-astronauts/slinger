@@ -1,6 +1,6 @@
 import {createStore} from 'redux'
 import dummyData from '../dummyData'
-
+import {devToolsEnhancer} from 'redux-devtools-extension';
 //YES. I did copy-paste this, but mostly just to have a placeholder
 
 
@@ -26,8 +26,10 @@ function reducer(state=initialState, action) {
   switch(type){
     case UPDATE_DEAL_DISPLAY:
       console.log(payload, "updated")
-      return {dealOnDisplay:payload,
-         ...state}
+      return {
+        ...state,
+        dealOnDisplay:payload
+        }
     
     default: 
     return state;
@@ -40,4 +42,4 @@ function reducer(state=initialState, action) {
 
 
 
-export default createStore(reducer)
+export default createStore(reducer, devToolsEnhancer())
