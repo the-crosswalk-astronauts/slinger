@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const massive = require('massive')
 const mongoose = require('mongoose')
-const{SERVER_PORT, SERVER_SECRET, POSTGRES_CONNECT, MONGO_CONNECT} = process.env
+const{SERVER_PORT, SESSION_SECRET, POSTGRES_CONNECT, MONGO_CONNECT} = process.env
 
 mongoose.set('useCreateIndex', true)
 
