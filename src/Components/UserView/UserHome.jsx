@@ -12,6 +12,8 @@ class UserHome extends Component {
     individualDealDisplayed: false
   }
   render() {
+
+    // this is for the conditional render of all deals onto the page- currently doesn't do anything. Uncomment when you want to work on it. 
     const dealMapper = dummyData.deals.map(el => {
       return <DealCard
         address={el.address}
