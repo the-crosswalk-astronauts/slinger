@@ -6,7 +6,7 @@ import {devToolsEnhancer} from 'redux-devtools-extension';
 
 const initialState= {
   deals: dummyData.deals,
-  dealOnDisplay:'1'
+  dealOnDisplay:null
 }
 
 
