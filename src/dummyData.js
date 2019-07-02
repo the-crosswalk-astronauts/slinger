@@ -69,9 +69,9 @@ module.exports = {
       contacts: [
         {
 
-          name: 'Travis Carter',
+          name: 'FARTS',
           phone: 801339999,
-          email: 'travis@firstcolonymortgage.com',
+          email: 'YEETYBOI69@texas.gov',
           type: 'Lender'
         },
 
@@ -82,9 +82,9 @@ module.exports = {
           type:'Title Officer'
         },
         {
-          name: 'Mark Bishop',
+          name: 'Jeff Tenor',
           phone: 8016024201,
-          email: "mark@shine.com",
+          email: "yay@yay.com",
           type: 'Listing Agent'
         },
         {
@@ -126,9 +126,9 @@ module.exports = {
       price: 250000,
       contacts: [
         {
-          name: 'Travis Carter',
-          phone: 801339999,
-          email: 'travis@firstcolonymortgage.com',
+          name: 'Marsha Justice',
+          phone: 8014431155,
+          email: 'marsha@kw.com',
           type: 'Lender'
         },
 

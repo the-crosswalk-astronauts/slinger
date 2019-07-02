@@ -1,4 +1,10 @@
-// These are all placeholder styling. 
+.completedToDo {
+  text-decoration: line-through;
+  color: lightgray;
+
+}
+
+// below items are all placeholder styling. 
 
 .contactsContainer {
   display: flex;
@@ -17,10 +23,4 @@
 }
 .propertyHeader h2 {
   margin: 2%;
-}
-
-.completedToDo {
-  text-decoration: line-through;
-  color: lightgray;
-
 }

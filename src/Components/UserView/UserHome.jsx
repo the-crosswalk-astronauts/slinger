@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import DealDisplay from './DealDisplay';
 import Sidebar from './Sidebar';
-
+import IndividualDeal from './IndividualDeal/IndividualDeal'
 
 export default class UserHome extends Component {
   
@@ -11,7 +10,7 @@ export default class UserHome extends Component {
     return (
       <div className='UserHome'>
         <Sidebar/>
-        <DealDisplay/>
+        <IndividualDeal/>
       </div>
     )
   }

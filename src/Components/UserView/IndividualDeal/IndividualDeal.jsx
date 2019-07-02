@@ -2,11 +2,26 @@ import React, { Component } from 'react'
 import ContactCard from './ContactCard'
 import Checklist from './Checklist'
 import dummyData from '../../../dummyData'
-export default class Sidebar extends Component {
+import {connect} from 'react-redux'
+
+class IndividualDeal extends Component {
+
+ componentDidMount() {
+   console.log('cdm')
+ }
+
+ 
+ 
+ 
   render() {
 
+//Up here I need to grab the state from redux (maybe an "dealOnDisplay" property) and then  
 
-    const contactsMap = dummyData.deals[0].contacts.map((el, i) => {
+    const activeDeal= dummyData.deals.find(el=> {
+      return +el.id===+this.props.deal
+    })
+
+    const contactsMap = activeDeal.contacts.map((el, i) => {
       return <ContactCard type={el.type} name={el.name} phone={el.phone} email={el.email} key={i} />
     })
     return (
@@ -14,9 +29,9 @@ export default class Sidebar extends Component {
 
         <header className="propertyHeader">
           {/* this is the mls/address/price for the deal */}
-          <h2>Address:{dummyData.deals[0].address}</h2>
-          <h2>MLS #:{dummyData.deals[0].mls}</h2>
-          <h2>Price:${dummyData.deals[0].price}</h2>
+          <h2>Address:{activeDeal.address}</h2>
+          <h2>MLS #:{activeDeal.mls}</h2>
+          <h2>Price:${activeDeal.price}</h2>
         </header>
 
         <div>
@@ -37,3 +52,15 @@ export default class Sidebar extends Component {
     )
   }
 }
+
+const mapStateToProps=(state)=> {
+  return {
+    deal: state.dealOnDisplay, 
+  }
+}
+
+const mapDispatchToProps= {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IndividualDeal)
