@@ -19,10 +19,17 @@ class UserHome extends Component {
         deleteId={el.id}
         key={el.id}
         fireUpdater={(id) => {
+
           updateDealDisplay(id)
-          this.setState({
-            individualDealDisplayed: true,
-          })
+          setTimeout(() => {
+
+            this.setState({
+              individualDealDisplayed: true,
+            })
+
+          }, 1000);
+
+
         }}
         client={el.contacts.find(element => {
           return element.type === 'Buyer'
@@ -30,7 +37,6 @@ class UserHome extends Component {
     })
 
 
-    if (this.state.individualDealDisplayed) {
       return (
         <div className='UserHome'>
           <Sidebar />
@@ -38,22 +44,10 @@ class UserHome extends Component {
 
         </div>
       )
-
-    } else {
-      return (
-        <div className="UserHome">
-          <Sidebar />
-          <div className="dealCardHolder">
-            {dealMapper}
-
-          </div>
-        </div>
-      )
-    }
-
-
+    
   }
 }
+
 
 const mapStateToProps = (state) => {
   return {
