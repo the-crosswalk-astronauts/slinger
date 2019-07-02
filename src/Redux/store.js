@@ -6,7 +6,7 @@ import {devToolsEnhancer} from 'redux-devtools-extension';
 
 const initialState= {
   deals: dummyData.deals,
-  dealOnDisplay:''
+  dealOnDisplay:'1'
 }
 
 
@@ -25,7 +25,6 @@ function reducer(state=initialState, action) {
 
   switch(type){
     case UPDATE_DEAL_DISPLAY:
-      console.log(payload, "updated")
       return {
         ...state,
         dealOnDisplay:payload
