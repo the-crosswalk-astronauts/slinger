@@ -1,0 +1,19 @@
+// placholder styling
+
+.dealCardHolder {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3%;
+}
+
+.dealCardHolder .dealCard {
+margin: 3%;
+border: 1px solid #000;
+padding: 3%;
+}
+
+.dealCard h2 {
+  font-size: 36px;
+}
