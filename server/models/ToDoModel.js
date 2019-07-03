@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 const ToDoModel = new mongoose.Schema({
-  step: {type: 'number'},
+  text: {type: 'string'},
+  category: {type: 'string'},
   completed: {type: 'number'},
   notes: {type: 'string'}
 })

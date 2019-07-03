@@ -3,11 +3,23 @@ const app = express()
 require('dotenv').config()
 const massive = require('massive')
 const mongoose = require('mongoose')
+const session = require('express-session')
 const{SERVER_PORT, SESSION_SECRET, POSTGRES_CONNECT, MONGO_CONNECT} = process.env
+const AuthCtrl = require('./Controllers/AuthController')
 
 mongoose.set('useCreateIndex', true)
 
 app.use(express.json())
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 4
+  }
+}))
+
+app.post('/auth/register', AuthCtrl.register)
 
 massive(POSTGRES_CONNECT).then(db => {
   app.set('db', db)
