@@ -20,6 +20,7 @@ app.use(session({
 }))
 
 app.post('/auth/register', AuthCtrl.register)
+app.post('/auth/login', AuthCtrl.login)
 
 massive(POSTGRES_CONNECT).then(db => {
   app.set('db', db)

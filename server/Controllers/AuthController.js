@@ -30,11 +30,43 @@ module.exports={
         console.log(`Error creating mongo user`)
       } else {
         req.session.user = {
-          email
+          data,
+          authenticated: true
         }
 
-        res.status(200).send(data)
+        res.status(200).send(req.session.user)
       }
     })    
+  },
+
+  login: async (req, res) => {
+    const db = req.app.get('db')
+
+    const {email, password} = req.body
+
+    const checkUsers = await db.checkUser(email)
+    const checkUser = checkUsers[0]
+
+    if(!checkUser) {
+      return res.status(401).send('Incorrect email or password')
+    }
+
+    let authenticated = bcrypt.compareSync(password, checkUser.hash)
+
+    if(authenticated){
+      User.find({email: email}).exec((err, data) => {
+        if(err){
+          return res.status(500).send('Error fetching user from mongodb')
+        } else {
+          req.session.user = {
+            data,
+            authenticated
+          }
+          return res.status(200).send(req.session.user)
+        }
+      })
+    }
+
+
   }
 }
