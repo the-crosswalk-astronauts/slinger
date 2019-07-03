@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { deals } from '../../dummyData'
 import { updateDealDisplay } from '../../Redux/store'
 import { connect } from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 class Sidebar extends Component {
   state = {
@@ -49,7 +50,9 @@ class Sidebar extends Component {
         </div>
         <nav className="sidebar-nav-hold">
           <div className="sidebar-nav-item">home</div>
-          <div className="sidebar-nav-item">add</div>
+          <div className="sidebar-nav-item" onClick={()=>{
+            this.props.history.push('/dealWizard')
+          }}>add</div>
           <div className="sidebar-nav-item">vault</div>
           <div className="sidebar-nav-item">logout</div>
         </nav>
@@ -68,4 +71,4 @@ const mapDispatchToProps = {
   updateDealDisplay
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Sidebar))

@@ -25,7 +25,7 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div>
+      <div className='register'>
 
         <h2>Email</h2>
         <input onChange={this.changeHandler} type="email" name='userEmail' required placeholder="Email" />

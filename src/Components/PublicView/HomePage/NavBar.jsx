@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 
 //the component that will house the login bar for a user. 
@@ -6,39 +6,42 @@ import React, {Component} from 'react'
 export default class NavBar extends Component {
   constructor() {
     super()
-    this.state= {
-      userEmail:'', 
-      userPass:'',  
+    this.state = {
+      userEmail: '',
+      userPass: '',
     }
   }
 
-  changeHandler=(e)=>{
+  changeHandler = (e) => {
     this.setState({
-      [e.target.name]:e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
 
   render() {
-    return(
-      <div>
+    return (
+      <div className="loginHolder">
+
+        <div>
+          <h2>Email</h2>
+          <input type="email" name='userEmail' required placeholder="Email" onChange={this.changeHandler} />
+        </div>
         
-        <h2>Email</h2>
-        <input type="email" name='userEmail' required placeholder="Email"  onChange={this.changeHandler}/>
+        
+        <div>
+          <h2>Password</h2>
+          <input type="password" name='userPass' required placeholder="password" onChange={this.changeHandler} />
+        </div>
 
 
-        <h2>Password</h2>
-        <input type="password" name='userPass' required placeholder="password" onChange={this.changeHandler}/>
-
-
-
-      <button onClick={()=>{
-        alert('Logged In!')
-        this.setState({
-          userEmail:'',
-          userPass:''
-        })
-    }}>Login</button>
+        <button onClick={() => {
+          alert('Logged In!')
+          this.setState({
+            userEmail: '',
+            userPass: ''
+          })
+        }}>Login</button>
 
       </div>
     )

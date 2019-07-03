@@ -9,9 +9,12 @@ export default class Splash extends Component {
       <div>
         <NavBar/>
         
+        <div className="splashContent">
+
         <QuickSell/>
 
         <Register/>
+        </div>
 
       </div>
     )
