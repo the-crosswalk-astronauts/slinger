@@ -9,6 +9,7 @@ module.exports = {
       address: '512 N Claypool Ct VA Beach VA',
       mls: 13288899,
       price: 250000,
+      isArchived:false,
       contacts: [
         {
           name: 'Travis Carter',
@@ -66,6 +67,7 @@ module.exports = {
       address: '123 Fake Street',
       mls: 6669,
       price: 250000,
+      isArchived:false,
       contacts: [
         {
 
@@ -124,6 +126,7 @@ module.exports = {
       address: '648 S 500 W Provo UT',
       mls: 13289,
       price: 250000,
+      isArchived:true,
       contacts: [
         {
           name: 'Marsha Justice',
