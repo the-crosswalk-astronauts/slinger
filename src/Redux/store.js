@@ -6,12 +6,13 @@ import {devToolsEnhancer} from 'redux-devtools-extension';
 
 const initialState= {
   deals: dummyData.deals,
-  dealOnDisplay:'1'
+  dealOnDisplay:'1', 
+  vaultSearch:''
 }
 
 
 export const UPDATE_DEAL_DISPLAY='UPDATE_DEAL_DISPLAY'
-
+export const VAULT_SEARCH='VAULT_SEARCH'
 
 export function updateDealDisplay(obj) {
   return {
@@ -19,6 +20,14 @@ export function updateDealDisplay(obj) {
     payload:obj 
   }
 }
+
+export function updateVaultSearch(obj){
+  return {
+    type:VAULT_SEARCH, 
+    payload:obj
+  }
+}
+
 
 function reducer(state=initialState, action) {
   const {type, payload}= action
@@ -29,6 +38,12 @@ function reducer(state=initialState, action) {
         ...state,
         dealOnDisplay:payload
         }
+
+    case VAULT_SEARCH:
+      return {
+        ...state, 
+        vaultSearch:payload
+      }
     
     default: 
     return state;
