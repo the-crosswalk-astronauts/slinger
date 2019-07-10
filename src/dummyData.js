@@ -6,6 +6,7 @@ module.exports = {
   deals: [
     {
       id: ++id,
+      inVault: false, 
       address: '512 N Claypool Ct VA Beach VA',
       mls: 13288899,
       price: 250000,
@@ -63,6 +64,7 @@ module.exports = {
     },
     {
       id: ++id,
+      inVault:false, 
       address: '123 Fake Street',
       mls: 6669,
       price: 250000,
@@ -121,6 +123,7 @@ module.exports = {
     },
     {
       id: ++id,
+      inVault: true, 
       address: '648 S 500 W Provo UT',
       mls: 13289,
       price: 250000,

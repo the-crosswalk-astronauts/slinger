@@ -36,7 +36,11 @@ class Sidebar extends Component {
             let { searchText } = this.state
             searchText.toLowerCase()
             if (el.address.toLowerCase().includes(searchText.toLowerCase()) || el.mls.toString().includes(searchText) || el.contacts[buyerIndex].name.toLowerCase().includes(searchText) || el.contacts[listingAgentIndex].name.toLowerCase().includes(searchText)) {
-              return el
+              
+              if(!el.inVault){
+                return el
+
+              }
             }
           }).map(element => (
 
@@ -53,7 +57,9 @@ class Sidebar extends Component {
           <div className="sidebar-nav-item" onClick={()=>{
             this.props.history.push('/dealWizard')
           }}>add</div>
-          <div className="sidebar-nav-item">vault</div>
+          <div className="sidebar-nav-item" onClick={()=>{
+            this.props.history.push('/Vault')
+          }}>vault</div>
           <div className="sidebar-nav-item">logout</div>
         </nav>
       </div>

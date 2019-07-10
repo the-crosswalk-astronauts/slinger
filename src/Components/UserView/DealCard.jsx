@@ -10,8 +10,7 @@ export default class DealCard extends Component {
 
         <h2>Address:{this.props.address}</h2>
         <h2>Price:${this.props.price}</h2>
-        <h2>Client:{this.props.client.name}
-        </h2>
+        
 
       </div>
     )
