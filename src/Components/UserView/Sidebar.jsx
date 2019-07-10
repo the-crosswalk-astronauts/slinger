@@ -14,7 +14,7 @@ class Sidebar extends Component {
       searchText: e.target.value
     })
   }
-  //You can currently search by buyer, listing agent, MLS number,  and address but the code is soggy AF
+  //You can currently search by buyer, listing agent, MLS number,  and address but the code is soggy AFffff
 
   render() {
     return (
