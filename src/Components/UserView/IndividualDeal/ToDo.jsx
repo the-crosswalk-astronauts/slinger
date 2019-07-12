@@ -21,9 +21,9 @@ export default class ToDo extends Component {
     return(
       <div className={this.state.isComplete ? 'completedToDo': 'incompleteToDo'}>
         
-        <p>{this.props.text}</p>
-        
         <input type="checkbox" onClick={this.toggleToDoClass}/>
+        
+        <p>{this.props.text}</p>
       </div>
     )
   }

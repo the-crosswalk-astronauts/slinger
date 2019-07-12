@@ -28,15 +28,6 @@ let checkListArr=[
 ]
 
 
-let betterArr= checkListArr.forEach(el=>{
-  let fullChecklist= []
-  fullChecklist.push({
-    id:++toDoId, 
-    text:el, 
-    isComplete:false
-  })
-  return fullChecklist
-})
 
 
 
@@ -79,7 +70,7 @@ module.exports = {
       
       ],
 
-      checklist: betterArr
+      checklist: checkListArr
 
     },
     {
