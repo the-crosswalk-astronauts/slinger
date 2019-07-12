@@ -10,6 +10,7 @@ import DealCard from './DealCard';
 class UserHome extends Component {
   state = {
     individualDealDisplayed: false
+
   }
   render() {
 

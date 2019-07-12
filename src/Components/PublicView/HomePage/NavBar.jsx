@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
+import {withRouter} from 'react-router-dom'
 
 //the component that will house the login bar for a user. 
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   constructor() {
     super()
     this.state = {
@@ -41,6 +41,7 @@ export default class NavBar extends Component {
             userEmail: '',
             userPass: ''
           })
+          this.props.history.push('/userHome')
         }}>Login</button>
 
       </div>
@@ -48,3 +49,5 @@ export default class NavBar extends Component {
   }
 
 }
+
+export default withRouter(NavBar)
