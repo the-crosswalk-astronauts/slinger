@@ -1,6 +1,45 @@
 let id = 0
 let toDoId = 0
-//each object in the array represents a deal
+
+
+
+///
+let checkListArr=[
+'Fill out KW Greensheet',
+'share/sign FYP/Mold, Wire Fraud Alert, and LBP disclosure with client.', 
+'Send executed contract to Buyer',
+'Send executed contract to Lender/Title (can be on same email)',
+'Set up inspection',
+'Send executed contract to Listing Agent and confirm inspection time', 
+'Collect earnest money',
+'Email copy of earnest money check to title/lending',
+'Send confirmation of earnest money receipt to listing agent',
+'Resolve concerns from inspection',
+'Contact lender and order the appraisal ',
+'Send updated copy of the contract to lending/title',
+'Touch base with buyer 2-3 times while waiting for the appraisal to get back',
+'Negotiate new appraisal price',
+'Send updated contract to lending/title with appraisal changes',
+'Clarify closing timeline with lender',
+'Contact buyer/listing agent and clarify closing/possession timeline',
+'Schedule the closing with title. ',
+'Check all docs for signatures/initials and Dotloop checklist before submission to Broker, ',
+'Submit to brokerage for approval '
+]
+
+
+let betterArr= checkListArr.forEach(el=>{
+  let fullChecklist= []
+  fullChecklist.push({
+    id:++toDoId, 
+    text:el, 
+    isComplete:false
+  })
+  return fullChecklist
+})
+
+
+
 module.exports = {
 
   deals: [
@@ -40,26 +79,7 @@ module.exports = {
       
       ],
 
-      checklist: [
-        {
-          id: ++toDoId,
-          text: 'Collect Earnest Money',
-          isComplete: false,
-
-        },
-        {
-          id: ++toDoId,
-          text: 'Yell at agent',
-          isComplete: false,
-
-        },
-        {
-          id: ++toDoId,
-          text: 'Order Appraisal',
-          isComplete: false,
-
-        },
-      ]
+      checklist: betterArr
 
     },
     {
@@ -183,3 +203,6 @@ module.exports = {
   ]
 
 }
+
+
+

@@ -43,7 +43,7 @@ class UserHome extends Component {
       return (
         <div className='UserHome'>
           <Sidebar />
-          <IndividualDeal />
+          <IndividualDeal/>
 
         </div>
       )
