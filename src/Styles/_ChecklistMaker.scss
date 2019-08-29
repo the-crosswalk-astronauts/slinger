@@ -1,0 +1,18 @@
+.showMaker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    position: absolute;
+    margin:auto;
+    top:20vh;
+    left:25vw;
+
+
+    padding:10%;
+}
+
+.hidden {
+    display:none
+}

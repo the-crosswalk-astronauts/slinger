@@ -1,16 +1,49 @@
 import React, { Component } from "react";
 import CreateDealInput from "./CreateDealInput";
 import ChecklistMaker from "./ChecklistMaker";
+import axios from 'axios'
 // So there's a really bad thing in this component- Before pushing to production, initialize state as blank strings/numbers...for all 5,000 inputs.
+
+
+//connect me to redux for active user! 
+let id = 0;
 
 export default class CreateDeal extends Component {
   constructor() {
     super();
     this.state = {
       selectorValue: "defaultSeller",
-      checklistMaker: false
+      hideChecklistMaker: false,
+      options: [
+        {
+          text: "default seller",
+          id: ++id
+        },
+        {
+          text: "default buyer",
+          id: ++id
+        },
+        {
+          text: "default",
+          id: ++id
+        }
+      ]
     };
   }
+
+componentDidMount() {
+
+  //gets user's checklists from the db
+//   axios.get(`/userChecklists/${this.props.activeUser}`).then(res=>{
+// this.setState({
+//   options:res.data
+// })
+//   })
+}
+
+  spaceRemover = str => {
+    return str.split(" ").join("");
+  };
 
   changeHandler = e => {
     this.setState({
@@ -22,14 +55,38 @@ export default class CreateDeal extends Component {
     e.preventDefault();
   };
 
+  togglePopUp=()=>{
+    this.setState({
+      hideChecklistMaker:!this.state.hideChecklistMaker
+    })
+  }
+
+
   // the idea of this component is to create a deal- the user inputs all of the "hotsheet" info so that they can see it in an at-a glance somewhere else in the app.
 
   //they can also make a custom checklist, save it, then select one to use when they create a deal.
 
   render() {
+    let optionsMap = this.state.options.map(el => {
+      return (
+        <option name={this.spaceRemover(el.text)} key={el.id}>
+          {el.text}
+        </option>
+      );
+    });
     return (
       <div>
-        <ChecklistMaker className={this.state.checklistMaker?'showMaker':'hidden'}/>
+        <ChecklistMaker
+          hideMe={res => {
+            this.togglePopUp();
+            
+            //placeholder
+            // this.setState({
+            //   options: res.data
+            // });
+          }}
+          ishidden={this.state.hideChecklistMaker}
+        />
 
         <h1>Create Deal</h1>
 
@@ -48,8 +105,7 @@ export default class CreateDeal extends Component {
                 });
               }}
             >
-              <option value="defaultBuyer">Default Buyer</option>
-              <option value="defaultSeller">Default Seller</option>
+{optionsMap}
             </select>
           </div>
 
