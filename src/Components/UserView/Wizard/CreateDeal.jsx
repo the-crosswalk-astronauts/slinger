@@ -8,7 +8,7 @@ export default class CreateDeal extends Component {
   constructor() {
     super()
     this.state = {
-      
+      selectorValue:'defaultSeller'
     }
   }
 
@@ -26,16 +26,32 @@ export default class CreateDeal extends Component {
 
   // the idea of this component is to create a deal- the user inputs all of the "hotsheet" info so that they can see it in an at-a glance somewhere else in the app. 
 
+  //they can also make a custom checklist, save it, then select one to use when they create a deal. 
 
 
 
   render() {
     return (
       <div>
-        Create Deal
+<h1>Create Deal</h1>
 
 
         <div className="dealWizard">
+
+        <div className="dealInfoHolder">
+          <h2>Please select a checklist to use for this deal</h2>
+
+{/* there will ahve to be an api call on this page to get the user's custom lists and then map them into the options section */}
+
+<select value={this.state.selectorValue} name='selectorValue' onChange={(e)=>{
+  this.setState({
+    selectorValue:e.target.value
+  })
+}}>
+  <option value="defaultBuyer">Default Buyer</option>
+  <option value="defaultSeller">Default Seller</option>
+</select>
+        </div>
 
           <div className="dealInfoHolder">
 
