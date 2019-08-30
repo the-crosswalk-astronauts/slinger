@@ -10,7 +10,7 @@ const initialState= {
   vaultSearch:''
 }
 
-
+export const GET_USER_DEALS='GET_USER_DEALS'
 export const UPDATE_DEAL_DISPLAY='UPDATE_DEAL_DISPLAY'
 export const VAULT_SEARCH='VAULT_SEARCH'
 
@@ -24,6 +24,15 @@ export function updateDealDisplay(obj) {
 export function updateVaultSearch(obj){
   return {
     type:VAULT_SEARCH, 
+    payload:obj
+  }
+}
+
+export function getUserDeals(obj){
+  
+  console.log('hit func')
+  return {
+    type:GET_USER_DEALS, 
     payload:obj
   }
 }
@@ -44,6 +53,13 @@ function reducer(state=initialState, action) {
         ...state, 
         vaultSearch:payload
       }
+
+      case GET_USER_DEALS:
+        console.log('hit switchcase')
+        return {
+          ...state, 
+          userDeals:payload
+        }
     
     default: 
     return state;
